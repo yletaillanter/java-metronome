@@ -1,13 +1,15 @@
 package Command;
 
+import GUI.ControllerImpl;
+
 /**
  * Created by hvallee on 02/10/2015.
  */
 public class CommandMarkTime implements Command {
 
-    private GUI.Controller controller;
+    private ControllerImpl controller;
 
-    public CommandMarkTime(GUI.Controller controller) {
+    public CommandMarkTime(ControllerImpl controller) {
         this.controller = controller;
     }
 

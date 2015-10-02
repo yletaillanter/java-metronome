@@ -1,11 +1,9 @@
 package GUI;
 
-public class Controller {
+public interface Controller {
 
 
-    public void markTime() {
-    }
+    public void markTime();
 
-    public void markMesure() {
-    }
+    public void markMesure();
 }
