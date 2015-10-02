@@ -21,13 +21,13 @@ public interface Engine {
      *
      * @param measure
      */
-    void setMeasurePerBeat(int measure);
+    void setBeatPerMeasure(int measure);
 
     /**
      *
      * @return
      */
-    int getMeasurePerBeat();
+    int getBeatPerMeasure();
 
     /**
      *
