@@ -1,0 +1,43 @@
+package Engine;
+
+/**
+ * Created by yoannlt on 02/10/15.
+ */
+public interface Engine {
+
+    /**
+     *
+     * @param tempo
+     */
+    void setTempo(int tempo);
+
+    /**
+     *
+     * @return
+     */
+    int getTempo();
+
+    /**
+     *
+     * @param measure
+     */
+    void setMeasurePerBeat(int measure);
+
+    /**
+     *
+     * @return
+     */
+    int getMeasurePerBeat();
+
+    /**
+     *
+     * @param state
+     */
+    void setState(boolean state);
+
+    /**
+     *
+     * @return
+     */
+    boolean getState();
+}
