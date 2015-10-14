@@ -8,5 +8,5 @@ public interface Controller {
 
     public void markTime();
 
-    public void markMesure();
+    public void markMeasure();
 }
