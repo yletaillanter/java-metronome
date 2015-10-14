@@ -6,6 +6,6 @@ public class ControllerImpl implements Controller{
     public void markTime() {
     }
 
-    public void markMesure() {
+    public void markMeasure() {
     }
 }
