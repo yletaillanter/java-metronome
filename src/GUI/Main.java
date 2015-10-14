@@ -1,22 +1,56 @@
 package GUI;
 
 import javafx.application.Application;
-import javafx.geometry.Orientation;
+import javafx.event.ActionEvent;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Slider;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
-import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+import Engine.Engine;
+import Engine.EngineImpl;
+
 public class Main extends Application {
 
+    private Controller controller;
+    private Engine engine;
+
+    private Button play;
+    private Button stop;
+    private Button inc;
+    private Button dec;
+
     @Override
-    public void start(Stage stage) throws Exception{
+    public void start(Stage stage) throws Exception {
+
+        initGIU(stage);
+        stage.show();
+
+        engine = new EngineImpl();
+        controller = new ControllerImpl(engine);
+
+        play.setOnAction((ActionEvent event) -> { controller.start(); });
+        stop.setOnAction((ActionEvent event) -> { controller.stop(); });
+
+        /*
+        play.setOnAction((ActionEvent event) -> { System.out.println("Play"); });
+        stop.setOnAction((ActionEvent event) -> { System.out.println("Stop"); });
+        inc.setOnAction((ActionEvent event) -> {
+        });
+        dec.setOnAction((ActionEvent event) -> {
+            System.out.println("Dec");
+        });
+        */
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+
+    private void initGIU(Stage stage) {
         // définit la largeur et la hauteur de la fenêtre
         // en pixels, le (0, 0) se situe en haut à gauche de la fenêtre
         stage.setWidth(400);
@@ -40,6 +74,9 @@ public class Main extends Application {
         // composer l'élément plus complexe
         sign.getChildren().add(panel);
 
+        Text text = new Text(90,10, "0");
+        sign.getChildren().add(text);
+
         Group buttonsGroup = new Group();
         buttonsGroup.setTranslateX(75);
         buttonsGroup.setTranslateY(200);
@@ -47,10 +84,10 @@ public class Main extends Application {
         panel2.setFill(Color.valueOf("#4CAF50"));
 
         //Creation des boutons
-        Button play = new Button("play");
-        Button stop = new Button("stop");
-        Button inc = new Button("inc");
-        Button dec = new Button("dec");
+        play = new Button("play");
+        stop = new Button("stop");
+        inc = new Button("inc");
+        dec = new Button("dec");
 
         play.setTranslateX(10);
         play.setTranslateY(15);
@@ -76,14 +113,5 @@ public class Main extends Application {
 
         // ajout de la scène sur l'estrade
         stage.setScene(scene);
-        // ouvrir le rideau
-        stage.show();
-
-        int i = 0;
-    }
-
-
-    public static void main(String[] args) {
-        launch(args);
     }
 }

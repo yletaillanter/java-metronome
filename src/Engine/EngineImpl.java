@@ -11,7 +11,7 @@ public class EngineImpl implements Engine{
 
 
     public EngineImpl() {
-        tempo = 30;
+        tempo = 90;
         state = false;
         beatPerMeasure = 0; //Todo: Calculate value
     }
@@ -39,6 +39,7 @@ public class EngineImpl implements Engine{
     @Override
     public void setState(boolean state) {
         this.state = state;
+        System.out.println("Tiny duck :" + state);
     }
 
     @Override
