@@ -1,6 +1,18 @@
 package GUI;
 
-public interface Controller {
+import javafx.fxml.Initializable;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public interface Controller extends Initializable {
+
+
+
+    @Override
+    default void initialize(URL location, ResourceBundle resources) {
+
+    }
 
     public void start();
 
