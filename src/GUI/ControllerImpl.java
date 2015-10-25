@@ -1,10 +1,8 @@
 package GUI;
 
 import Engine.Engine;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
+import Engine.EngineImpl;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 
 import java.net.URL;
@@ -12,28 +10,40 @@ import java.util.ResourceBundle;
 
 public class ControllerImpl implements Controller {
 
+    private Engine engine;
+
     @FXML
-    private Button myButton;
+    private Button playButton;
+    @FXML
+    private Button stopButton;
+    @FXML
+    private Button incButton;
+    @FXML
+    private Button decButton;
 
     public ControllerImpl() {
+    }
+
+    public ControllerImpl(Engine engine) {
+        this.engine = engine;
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        // TODO le reste du metronome
-        //myButton.setOnAction(event -> setLogger());
+        engine = new EngineImpl();
+
+        playButton.setOnAction((event) -> triggerLogger(event.getSource().toString()));
+        stopButton.setOnAction((event) -> triggerLogger(event.getSource().toString()));
+        incButton.setOnAction((event) -> triggerLogger(event.getSource().toString()));
+        decButton.setOnAction((event) -> triggerLogger(event.getSource().toString()));
     }
 
-    public void setLogger() {
-        System.out.println("TEST");
+    public void triggerLogger(String name) {
+        System.out.println("Button pressed:" + name);
     }
 
-    private Engine engine;
 
-    public ControllerImpl(Engine engine) {
-        this.engine = engine;
-    }
     public void markTime() {
     }
 

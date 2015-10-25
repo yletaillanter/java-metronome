@@ -1,22 +1,13 @@
 package GUI;
 
 import javafx.application.Application;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Group;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.layout.GridPane;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
-import javafx.scene.text.Text;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 import Engine.Engine;
-import Engine.EngineImpl;
 
 public class Main extends Application {
 
@@ -31,27 +22,12 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws Exception {
 
-        GridPane root = (GridPane) FXMLLoader.load(getClass().getResource("/GUI/sample.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/GUI/sample.fxml"));
+        BorderPane view = loader.load();
 
-        stage.setTitle("FXML Welcome");
-        stage.setScene(new Scene(root, 300, 275));
+        stage.setTitle("Metronome AOC");
+        stage.setScene(new Scene(view, 600, 550));
         stage.show();
-
-        //engine = new EngineImpl();
-        //controller = new ControllerImpl(engine);
-
-        //play.setOnAction((ActionEvent event) -> { controller.start(); });
-        //stop.setOnAction((ActionEvent event) -> { controller.stop(); });
-
-        /*
-        play.setOnAction((ActionEvent event) -> { System.out.println("Play"); });
-        stop.setOnAction((ActionEvent event) -> { System.out.println("Stop"); });
-        inc.setOnAction((ActionEvent event) -> {
-        });
-        dec.setOnAction((ActionEvent event) -> {
-            System.out.println("Dec");
-        });
-        */
     }
 
     public static void main(String[] args) {
