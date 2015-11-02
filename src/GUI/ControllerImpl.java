@@ -44,9 +44,11 @@ public class ControllerImpl implements Controller {
 
 
     public void markTime() {
+        System.out.println("Marking time");
     }
 
     public void markMeasure() {
+        System.out.println("Marking measure");
     }
 
     @Override
