@@ -2,8 +2,11 @@ package GUI;
 
 import Engine.Engine;
 import Engine.EngineImpl;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Slider;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -20,6 +23,8 @@ public class ControllerImpl implements Controller {
     private Button incButton;
     @FXML
     private Button decButton;
+    @FXML
+    private Slider slider;
 
     /**
      *  Constructor controllerImpl
@@ -59,5 +64,9 @@ public class ControllerImpl implements Controller {
     @Override
     public void stop() {
         engine.setState(false);
+    }
+
+    public void userSlider() {
+        System.out.println(slider.getValue());
     }
 }

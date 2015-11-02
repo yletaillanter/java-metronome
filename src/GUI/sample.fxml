@@ -7,15 +7,14 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ControllerImpl">
    <bottom>
       <HBox prefHeight="100.0" prefWidth="200.0" spacing="50.0" BorderPane.alignment="CENTER">
          <children>
-            <Button mnemonicParsing="false" text="Play" fx:id="playButton"/>
-            <Button mnemonicParsing="false" text="Stop" fx:id="stopButton"/>
-            <Button mnemonicParsing="false" text="Inc" fx:id="incButton"/>
-            <Button mnemonicParsing="false" text="Dec" fx:id="decButton"/>
+            <Button fx:id="playButton" mnemonicParsing="false" text="Play" />
+            <Button fx:id="stopButton" mnemonicParsing="false" text="Stop" />
+            <Button fx:id="incButton" mnemonicParsing="false" text="Inc" />
+            <Button fx:id="decButton" mnemonicParsing="false" text="Dec" />
          </children>
       </HBox>
    </bottom>
@@ -41,6 +40,6 @@
       </MenuBar>
    </top>
    <left>
-      <Slider orientation="VERTICAL" BorderPane.alignment="CENTER" />
+      <Slider fx:id="slider" onMouseDragReleased="#userSlider" orientation="VERTICAL" BorderPane.alignment="CENTER" />
    </left>
 </BorderPane>
