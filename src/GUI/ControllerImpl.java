@@ -33,7 +33,10 @@ public class ControllerImpl implements Controller {
 
         engine = new EngineImpl();
 
-        playButton.setOnAction((event) -> triggerLogger(event.getSource().toString()));
+        playButton.setOnAction(
+                (event) -> triggerLogger(event.getSource().toString())
+
+        );
         stopButton.setOnAction((event) -> triggerLogger(event.getSource().toString()));
         incButton.setOnAction((event) -> triggerLogger(event.getSource().toString()));
         decButton.setOnAction((event) -> triggerLogger(event.getSource().toString()));
