@@ -39,7 +39,7 @@ public class EngineImpl implements Engine{
     @Override
     public void setState(boolean state) {
         this.state = state;
-        System.out.println("Tiny duck :" + state);
+        System.out.println("Engine mode:" + getState());
     }
 
     @Override

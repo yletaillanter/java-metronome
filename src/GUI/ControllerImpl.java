@@ -24,17 +24,13 @@ public class ControllerImpl implements Controller {
     public ControllerImpl() {
     }
 
-    public ControllerImpl(Engine engine) {
-        this.engine = engine;
-    }
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
         engine = new EngineImpl();
 
-        playButton.setOnAction((event) -> triggerLogger(event.getSource().toString()));
-        stopButton.setOnAction((event) -> triggerLogger(event.getSource().toString()));
+        playButton.setOnAction((event) -> start());
+        stopButton.setOnAction((event) -> stop());
         incButton.setOnAction((event) -> triggerLogger(event.getSource().toString()));
         decButton.setOnAction((event) -> triggerLogger(event.getSource().toString()));
     }
