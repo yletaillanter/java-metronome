@@ -21,6 +21,9 @@ public class ControllerImpl implements Controller {
     @FXML
     private Button decButton;
 
+    /**
+     *  Constructor controllerImpl
+     */
     public ControllerImpl() {
     }
 
