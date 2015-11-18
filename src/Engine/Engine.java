@@ -1,5 +1,7 @@
 package Engine;
 
+import GUI.Controller;
+
 /**
  * Created by yoannlt on 02/10/15.
  */

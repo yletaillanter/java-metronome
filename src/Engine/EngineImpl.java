@@ -1,6 +1,7 @@
 package Engine;
 
 import Command.CommandTask;
+import GUI.Controller;
 import GUI.Main;
 
 /**
@@ -12,11 +13,13 @@ public class EngineImpl implements Engine{
     private int beatPerMeasure;
     private boolean state;
     Clock clock;
+    Controller controller;
 
-    public EngineImpl() {
+    public EngineImpl(Controller cont) {
         tempo = 30;
         state = false;
         beatPerMeasure = 0; //Todo: Calculate value
+        controller = cont;
     }
 
     @Override
@@ -62,7 +65,7 @@ public class EngineImpl implements Engine{
     public void startClock() {
         long markPerMinute = Math.round((60 / (float) tempo) * 1000);
         System.out.println(markPerMinute);
-        CommandTask com = new CommandTask();
+        CommandTask com = new CommandTask(controller);
         clock = new Clock(com, markPerMinute);
     }
 }

@@ -1,5 +1,7 @@
 package Command;
 
+import GUI.Controller;
+
 import java.util.TimerTask;
 
 /**
@@ -7,17 +9,20 @@ import java.util.TimerTask;
  */
 public class CommandTask extends TimerTask implements Command {
 
+    Controller controller;
     int count = 0;
 
+    public CommandTask(Controller cont) {
+        controller = cont;
+    }
     @Override
     public void execute() {
 
         if(count%4 == 0) {
-            System.out.println("Mark time");
-            System.out.println("Mark measure");
+            controller.markMeasure();
         }
         else {
-            System.out.println("Mark time");
+            controller.markTime();
         }
         count++;
     }
