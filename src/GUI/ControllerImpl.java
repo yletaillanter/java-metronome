@@ -2,8 +2,6 @@ package GUI;
 
 import Engine.Engine;
 import Engine.EngineImpl;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Slider;
