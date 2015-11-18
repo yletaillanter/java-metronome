@@ -5,6 +5,7 @@ import Engine.EngineImpl;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Slider;
+import javafx.scene.text.Text;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -23,6 +24,8 @@ public class ControllerImpl implements Controller {
     private Button decButton;
     @FXML
     private Slider slider;
+    @FXML
+    private Text sliderLabel;
 
     /**
      *  Constructor controllerImpl
@@ -65,6 +68,11 @@ public class ControllerImpl implements Controller {
     }
 
     public void userSlider() {
-        System.out.println(slider.getValue());
+        engine.setTempo((int)Math.round(slider.getValue()));
+    }
+
+    public void updateSliderLabel() {
+        sliderLabel.textProperty().setValue(
+                String.valueOf((int) slider.getValue()));
     }
 }

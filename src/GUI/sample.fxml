@@ -41,7 +41,7 @@
       </HBox>
    </bottom>
    <top>
-      <MenuBar BorderPane.alignment="CENTER">
+      <MenuBar onMouseDragged="#updateSliderLabel" BorderPane.alignment="CENTER">
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
@@ -68,8 +68,12 @@
             <Circle fill="#b5b5b5" layoutX="158.0" radius="38.0" stroke="BLACK" strokeType="INSIDE" />
             <Text layoutX="135.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Measure" />
             <Text layoutX="-17.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Time" />
-            <Slider fx:id="slider" layoutX="-56.0" layoutY="106.0" onMouseDragReleased="#userSlider" prefHeight="14.0" prefWidth="289.0" />
-            <Text layoutX="60.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tempo" />
+            <Slider fx:id="slider" blockIncrement="1.0" layoutX="-56.0" layoutY="106.0" max="300.0" min="30.0" onMouseDragged="#updateSliderLabel" onMouseMoved="#updateSliderLabel" onMouseReleased="#userSlider" prefHeight="14.0" prefWidth="289.0" value="30.0" />
+            <Text fx:id="sliderLabel" layoutX="75.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="30">
+               <font>
+                  <Font name="System Bold" size="40.0" />
+               </font>
+            </Text>
          </children>
       </Group>
    </center>

@@ -14,7 +14,7 @@ public class EngineImpl implements Engine{
     Clock clock;
 
     public EngineImpl() {
-        tempo = 120;
+        tempo = 30;
         state = false;
         beatPerMeasure = 0; //Todo: Calculate value
     }
