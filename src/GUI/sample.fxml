@@ -40,6 +40,6 @@
       </MenuBar>
    </top>
    <left>
-      <Slider fx:id="slider" onMouseDragReleased="#userSlider" orientation="VERTICAL" BorderPane.alignment="CENTER" />
+      <Slider fx:id="slider" onMouseReleased="#userSlider" orientation="VERTICAL" BorderPane.alignment="CENTER" />
    </left>
 </BorderPane>
