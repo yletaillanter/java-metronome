@@ -3,6 +3,7 @@ package Engine;
 import Command.CommandTask;
 import GUI.Controller;
 import GUI.Main;
+import javafx.application.Platform;
 
 /**
  * Created by hvallee on 02/10/2015.
@@ -25,7 +26,7 @@ public class EngineImpl implements Engine{
     @Override
     public void setTempo(int tempo) {
         this.tempo = tempo;
-        clock.stop();
+            clock.stop();
         startClock();
     }
 
@@ -54,7 +55,6 @@ public class EngineImpl implements Engine{
         else {
             clock.stop();
         }
-
     }
 
     @Override

@@ -1,6 +1,7 @@
 package Command;
 
 import GUI.Controller;
+import javafx.application.Platform;
 
 import java.util.TimerTask;
 
