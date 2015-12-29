@@ -97,7 +97,9 @@ public class ControllerImpl implements Controller {
     }
 
     public void userSlider() {
-        engine.setTempo((int)Math.round(slider.getValue()));
+        if (engine != null) {
+            engine.setTempo((int)Math.round(slider.getValue()));
+        }
     }
 
     public void updateSliderLabel() {

@@ -26,8 +26,10 @@ public class EngineImpl implements Engine{
     @Override
     public void setTempo(int tempo) {
         this.tempo = tempo;
-        clock.stop();
-        startClock();
+        if(clock != null){
+            clock.stop();
+            startClock();
+        }
     }
 
     @Override
@@ -53,7 +55,9 @@ public class EngineImpl implements Engine{
             startClock();
         }
         else {
-            clock.stop();
+            if (clock != null) {
+                clock.stop();
+            }
         }
     }
 
