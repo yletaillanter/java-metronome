@@ -77,4 +77,7 @@
          </children>
       </Group>
    </center>
+   <right>
+      <ChoiceBox prefWidth="150.0" BorderPane.alignment="TOP_CENTER" />
+   </right>
 </BorderPane>

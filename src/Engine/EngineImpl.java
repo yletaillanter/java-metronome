@@ -26,7 +26,7 @@ public class EngineImpl implements Engine{
     @Override
     public void setTempo(int tempo) {
         this.tempo = tempo;
-            clock.stop();
+        clock.stop();
         startClock();
     }
 

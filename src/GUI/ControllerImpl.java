@@ -6,10 +6,15 @@ import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Slider;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
 
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -64,6 +69,7 @@ public class ControllerImpl implements Controller {
             e.printStackTrace();
         }
         Platform.runLater(() -> timeLed.setFill(Color.DARKGREY));
+        play("src/res/low.wav");
     }
 
     public void markMeasure() {
@@ -77,6 +83,7 @@ public class ControllerImpl implements Controller {
         }
         Platform.runLater(() -> measureLed.setFill(Color.DARKGREY));
         Platform.runLater(() -> timeLed.setFill(Color.DARKGREY));
+        play("src/res/high.wav");
     }
 
     @Override
@@ -96,5 +103,12 @@ public class ControllerImpl implements Controller {
     public void updateSliderLabel() {
         Platform.runLater(() -> sliderLabel.textProperty().setValue(
                 String.valueOf((int) slider.getValue())));
+    }
+
+    public static void play(String filename)
+    {
+        Media sound = new Media(new File(filename).toURI().toString());
+        MediaPlayer mediaPlayer = new MediaPlayer(sound);
+        mediaPlayer.play();
     }
 }
