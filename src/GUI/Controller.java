@@ -21,4 +21,8 @@ public interface Controller extends Initializable {
     public void markTime();
 
     public void markMeasure();
+
+    public void inc();
+
+    public void dec();
 }

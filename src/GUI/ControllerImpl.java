@@ -50,10 +50,10 @@ public class ControllerImpl implements Controller {
 
         engine = new EngineImpl(this);
 
-        playButton.setOnAction((event) -> start());
-        stopButton.setOnAction((event) -> stop());
-        incButton.setOnAction((event) -> triggerLogger(event.getSource().toString()));
-        decButton.setOnAction((event) -> triggerLogger(event.getSource().toString()));
+       /* playButton.setOnAction((event) -> start());
+        stopButton.setOnAction((event) -> stop());*/
+       /* incButton.setOnAction((event) -> triggerLogger(event.getSource().toString()));
+        decButton.setOnAction((event) -> triggerLogger(event.getSource().toString()));*/
     }
 
     public void triggerLogger(String name) {
@@ -84,6 +84,16 @@ public class ControllerImpl implements Controller {
         Platform.runLater(() -> measureLed.setFill(Color.DARKGREY));
         Platform.runLater(() -> timeLed.setFill(Color.DARKGREY));
         play("src/res/high.wav");
+    }
+
+    @Override
+    public void inc() {
+        engine.setBeatPerMeasure(1);
+    }
+
+    @Override
+    public void dec() {
+        engine.setBeatPerMeasure(-1);
     }
 
     @Override

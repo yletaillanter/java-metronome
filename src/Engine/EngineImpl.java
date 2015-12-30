@@ -19,7 +19,7 @@ public class EngineImpl implements Engine{
     public EngineImpl(Controller cont) {
         tempo = 30;
         state = false;
-        beatPerMeasure = 0; //Todo: Calculate value
+        beatPerMeasure = 4; //Todo: Calculate value
         controller = cont;
     }
 
@@ -39,7 +39,24 @@ public class EngineImpl implements Engine{
 
     @Override
     public void setBeatPerMeasure(int measure) {
-        this.beatPerMeasure = measure;
+        switch (measure) {
+            case -1:
+               if(this.beatPerMeasure > 2) {
+                   this.beatPerMeasure --;
+               }
+                break;
+            case 1:
+                if(this.beatPerMeasure < 7) {
+                    this.beatPerMeasure ++;
+                }
+                break;
+            default:
+                break;
+        }
+        if(clock != null){
+            clock.stop();
+            startClock();
+        }
     }
 
     @Override
@@ -69,7 +86,7 @@ public class EngineImpl implements Engine{
     public void startClock() {
         long markPerMinute = Math.round((60 / (float) tempo) * 1000);
         System.out.println(markPerMinute);
-        CommandTask com = new CommandTask(controller);
+        CommandTask com = new CommandTask(controller, beatPerMeasure);
         clock = new Clock(com, markPerMinute);
     }
 }

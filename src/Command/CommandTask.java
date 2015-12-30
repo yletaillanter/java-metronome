@@ -12,14 +12,16 @@ public class CommandTask extends TimerTask implements Command {
 
     Controller controller;
     int count = 0;
+    int beatPerMeasure = 0;
 
-    public CommandTask(Controller cont) {
+    public CommandTask(Controller cont, int beat) {
         controller = cont;
+        beatPerMeasure = beat;
     }
     @Override
     public void execute() {
 
-        if(count%4 == 0) {
+        if(count%beatPerMeasure == 0) {
             controller.markMeasure();
         }
         else {
