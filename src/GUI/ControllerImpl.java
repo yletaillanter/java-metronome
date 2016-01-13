@@ -29,8 +29,8 @@ public class ControllerImpl implements Controller {
     public ControllerImpl() {
 
         engine = new EngineImpl(this);
-        timeToMark = true;
-        measureToMark = true;
+        timeToMark = false;
+        measureToMark = false;
     }
 
 

@@ -18,7 +18,7 @@ import java.util.TimerTask;
  */
 public class IHMImpl implements IHM{
 
-    private ControllerImpl controller;
+    private ControllerAdapter controllerAdapter;
 
     @FXML
     private Slider slider;
@@ -33,33 +33,33 @@ public class IHMImpl implements IHM{
     private Circle measureLed;
 
     public IHMImpl(){
-        controller = new ControllerImpl();
+        controllerAdapter = new ControllerAdapterImpl();
         Timer t = new Timer();
         t.scheduleAtFixedRate(
                 new TimerTask()
                 {
                     public void run()
                     {
-                        if(controller.getMeasureToMark()) {
+                        if(controllerAdapter.getMeasureToMarkAdapter()) {
                             markMeasureIHM();
                         }
-                        else if(controller.getTimeToMark()) {
+                        else if(controllerAdapter.getTimeToMarkAdapter()) {
                             markTimeIHM();
                         }
                     }
                 },
-                0,      // run first occurrence immediatetly
+                0,      // run first occurrence immediately
                 100); // run every two seconds
     }
 
     @Override
     public void startIHM() {
-        controller.start();
+        controllerAdapter.startAdapter();
     }
 
     @Override
     public void stopIHM() {
-        controller.stop();
+        controllerAdapter.stopAdapter();
     }
 
     @Override
@@ -72,7 +72,7 @@ public class IHMImpl implements IHM{
         }
         Platform.runLater(() -> timeLed.setFill(Color.DARKGREY));
         play("src/res/low.wav");
-        controller.setTimeToMark();
+        controllerAdapter.setTimeToMarkAdapter();
     }
 
     @Override
@@ -88,18 +88,18 @@ public class IHMImpl implements IHM{
         Platform.runLater(() -> measureLed.setFill(Color.DARKGREY));
         Platform.runLater(() -> timeLed.setFill(Color.DARKGREY));
         play("src/res/high.wav");
-        controller.setMeasureToMark();
-        controller.setTimeToMark();
+        controllerAdapter.setMeasureToMarkAdapter();
+        controllerAdapter.setTimeToMarkAdapter();
     }
 
     @Override
     public void incIHM() {
-        controller.inc();
+        controllerAdapter.incAdapter();
     }
 
     @Override
     public void decIHM() {
-        controller.dec();
+        controllerAdapter.decAdapter();
     }
 
     public static void play(String filename)
@@ -110,7 +110,7 @@ public class IHMImpl implements IHM{
     }
 
     public void userSliderIHM() {
-       controller.userSlider((int)slider.getValue());
+        controllerAdapter.userSliderAdapter((int)slider.getValue());
     }
 
     public void updateSliderLabel() {
