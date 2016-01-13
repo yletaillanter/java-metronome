@@ -9,28 +9,28 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ControllerImpl">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.IHMImpl">
    <bottom>
       <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="50.0" BorderPane.alignment="CENTER">
          <children>
             <Group>
                <children>
-                  <Button fx:id="incButton" layoutX="369.0" layoutY="3.0" mnemonicParsing="false" onAction="#inc" text="Inc">
+                  <Button fx:id="incButton" layoutX="369.0" layoutY="3.0" mnemonicParsing="false" onAction="#incIHM" text="Inc">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Button>
-                  <Button fx:id="playButton" layoutX="85.0" layoutY="2.0" mnemonicParsing="false" onAction="#start" text="Play">
+                  <Button fx:id="playButton" layoutX="85.0" layoutY="2.0" mnemonicParsing="false" onAction="#startIHM" text="Play">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Button>
-                  <Button fx:id="stopButton" layoutX="224.0" layoutY="3.0" mnemonicParsing="false" onAction="#stop" text="Stop">
+                  <Button fx:id="stopButton" layoutX="224.0" layoutY="3.0" mnemonicParsing="false" onAction="#stopIHM" text="Stop">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Button>
-                  <Button fx:id="decButton" layoutX="504.0" layoutY="2.0" mnemonicParsing="false" onAction="#dec" text="Dec">
+                  <Button fx:id="decButton" layoutX="504.0" layoutY="2.0" mnemonicParsing="false" onAction="#decIHM" text="Dec">
                      <font>
                         <Font size="22.0" />
                      </font>
@@ -68,7 +68,7 @@
             <Circle fx:id="measureLed" fill="#b5b5b5" layoutX="158.0" radius="38.0" stroke="BLACK" strokeType="INSIDE" />
             <Text layoutX="135.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Measure" />
             <Text layoutX="-17.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Time" />
-            <Slider fx:id="slider" blockIncrement="1.0" layoutX="-56.0" layoutY="106.0" max="300.0" min="30.0" onMouseDragged="#updateSliderLabel" onMouseMoved="#updateSliderLabel" onMouseReleased="#userSlider" prefHeight="14.0" prefWidth="289.0" value="30.0" />
+            <Slider fx:id="slider" blockIncrement="1.0" layoutX="-56.0" layoutY="106.0" max="300.0" min="30.0" onMouseDragged="#updateSliderLabel" onMouseMoved="#updateSliderLabel" onMouseReleased="#userSliderIHM" prefHeight="14.0" prefWidth="289.0" value="30.0" />
             <Text fx:id="sliderLabel" layoutX="75.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="30">
                <font>
                   <Font name="System Bold" size="40.0" />

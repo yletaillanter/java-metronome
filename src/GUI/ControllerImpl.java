@@ -22,68 +22,24 @@ public class ControllerImpl implements Controller {
 
     private Engine engine;
 
-    @FXML
-    private Button playButton;
-    @FXML
-    private Button stopButton;
-    @FXML
-    private Button incButton;
-    @FXML
-    private Button decButton;
-    @FXML
-    private Slider slider;
-    @FXML
-    private Text sliderLabel;
-    @FXML
-    private Circle timeLed;
-    @FXML
-    private Circle measureLed;
+    public boolean timeToMark;
 
-    /**
-     *  Constructor controllerImpl
-     */
+    public boolean measureToMark;
+
     public ControllerImpl() {
-    }
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
 
         engine = new EngineImpl(this);
-
-       /* playButton.setOnAction((event) -> start());
-        stopButton.setOnAction((event) -> stop());*/
-       /* incButton.setOnAction((event) -> triggerLogger(event.getSource().toString()));
-        decButton.setOnAction((event) -> triggerLogger(event.getSource().toString()));*/
+        timeToMark = true;
+        measureToMark = true;
     }
 
-    public void triggerLogger(String name) {
-        System.out.println("Button pressed:" + name);
-    }
 
     public void markTime() {
-        System.out.println("Marking time");
-        Platform.runLater(() -> timeLed.setFill(Color.YELLOW));
-        try {
-            Thread.sleep(100);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        Platform.runLater(() -> timeLed.setFill(Color.DARKGREY));
-        play("src/res/low.wav");
+        timeToMark = true;
     }
 
     public void markMeasure() {
-        System.out.println("Marking measure");
-        Platform.runLater(() -> measureLed.setFill(Color.YELLOW));
-        Platform.runLater(() -> timeLed.setFill(Color.YELLOW));
-        try {
-            Thread.sleep(100);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        Platform.runLater(() -> measureLed.setFill(Color.DARKGREY));
-        Platform.runLater(() -> timeLed.setFill(Color.DARKGREY));
-        play("src/res/high.wav");
+        measureToMark = true;
     }
 
     @Override
@@ -106,21 +62,30 @@ public class ControllerImpl implements Controller {
         engine.setState(false);
     }
 
-    public void userSlider() {
+    public void userSlider(int value) {
         if (engine != null) {
-            engine.setTempo((int)Math.round(slider.getValue()));
+            engine.setTempo(Math.round(value));
         }
     }
 
-    public void updateSliderLabel() {
-        Platform.runLater(() -> sliderLabel.textProperty().setValue(
-                String.valueOf((int) slider.getValue())));
+    @Override
+    public boolean getTimeToMark() {
+        return timeToMark;
     }
 
-    public static void play(String filename)
-    {
-        Media sound = new Media(new File(filename).toURI().toString());
-        MediaPlayer mediaPlayer = new MediaPlayer(sound);
-        mediaPlayer.play();
+    @Override
+    public boolean getMeasureToMark() {
+        return measureToMark;
     }
+
+    @Override
+    public void setTimeToMark() {
+        timeToMark = false;
+    }
+
+    @Override
+    public void setMeasureToMark() {
+        measureToMark = false;
+    }
+
 }
