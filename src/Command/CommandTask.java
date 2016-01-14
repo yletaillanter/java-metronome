@@ -6,6 +6,7 @@ import javafx.application.Platform;
 import java.util.TimerTask;
 
 /**
+ * This command create an Horloge to manage when we should mark time or measure.
  * Created by hvallee on 02/11/2015.
  */
 public class CommandTask extends TimerTask implements Command {

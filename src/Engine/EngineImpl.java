@@ -2,8 +2,6 @@ package Engine;
 
 import Command.CommandTask;
 import GUI.Controller;
-import GUI.Main;
-import javafx.application.Platform;
 
 /**
  * Created by hvallee on 02/10/2015.

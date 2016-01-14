@@ -1,17 +1,12 @@
 package GUI;
 
-import javafx.fxml.Initializable;
+/**
+ * Metronome's controller interface
+ * @author hvallee
+ *
+ */
+public interface Controller {
 
-import java.net.URL;
-import java.util.ResourceBundle;
-
-public interface Controller extends Initializable {
-
-
-    @Override
-    default void initialize(URL location, ResourceBundle resources) {
-
-    }
 
     public void start();
 

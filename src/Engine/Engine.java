@@ -15,31 +15,31 @@ public interface Engine {
 
     /**
      *
-     * @return
+     * @return tempo
      */
     int getTempo();
 
     /**
-     *
+     * Set the number of beat per measure
      * @param measure
      */
     void setBeatPerMeasure(int measure);
 
     /**
      *
-     * @return
+     * @return the number of beat per measure
      */
     int getBeatPerMeasure();
 
     /**
-     *
+     * Put the metronome on or off
      * @param state
      */
     void setState(boolean state);
 
     /**
      *
-     * @return
+     * @return state
      */
     boolean getState();
 

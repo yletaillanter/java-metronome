@@ -1,10 +1,10 @@
 package GUI;
 
-import javafx.fxml.Initializable;
-
-import java.net.URL;
-import java.util.ResourceBundle;
-
+/**
+ * Interface adapter pour faire la jointure entre le controlleur et l'IHM
+ * @author hvallee
+ *
+ */
 public interface ControllerAdapter {
 
     public void startAdapter();

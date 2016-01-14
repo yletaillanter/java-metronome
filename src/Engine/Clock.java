@@ -4,6 +4,7 @@ import Command.CommandTask;
 import java.util.Timer;
 
 /**
+ * This class is the clock used for tempo
  * Created by hvallee on 02/11/2015.
  */
 public class Clock {
