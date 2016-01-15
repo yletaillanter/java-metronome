@@ -84,7 +84,7 @@ public class EngineImplTest {
     public void testStartClock() throws Exception {
         engineImpl.startClock();
 
-        // On laisse le temps de marquer la mesure...
+        // On laisse le temps de battre la mesure ...
         Thread.sleep(2000);
 
         // Assert controller was called by commmand

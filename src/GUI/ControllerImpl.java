@@ -17,8 +17,14 @@ public class ControllerImpl implements Controller {
     public boolean measureToMark;
 
     public ControllerImpl() {
-
         engine = new EngineImpl(this);
+        timeToMark = false;
+        measureToMark = false;
+    }
+
+    // For testing purpose
+    public ControllerImpl(Engine engine) {
+        this.engine = engine;
         timeToMark = false;
         measureToMark = false;
     }
