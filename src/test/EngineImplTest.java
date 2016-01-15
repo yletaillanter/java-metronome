@@ -10,7 +10,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
 
-import static org.junit.Assert.*;
+import static org.mockito.Mockito.*;
 
 /**
  * Created by Yoann on 15/01/2016.
@@ -80,11 +80,15 @@ public class EngineImplTest {
 
     }
 
-
     @Test
     public void testStartClock() throws Exception {
-        CommandTask com = Mockito.mock(CommandTask.class);
-        Clock clock = Mockito.mock(Clock.class);
-        engineImpl.testStartClock(clock,com);
+        engineImpl.startClock();
+
+        // On laisse le temps de marquer la mesure...
+        Thread.sleep(2000);
+
+        // Assert controller was called by commmand
+        verify(controller, atLeastOnce()).markMeasure();
+        verify(controller, atLeastOnce()).markTime();
     }
 }

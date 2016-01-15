@@ -86,12 +86,4 @@ public class EngineImpl implements Engine{
         CommandTask com = new CommandTask(controller, beatPerMeasure);
         clock = new Clock(com, markPerMinute);
     }
-
-    //For test purpose
-    public void testStartClock(Clock clock, CommandTask command) {
-        long markPerMinute = Math.round((60 / (float) tempo) * 1000);
-        System.out.println(markPerMinute);
-        CommandTask com = command;
-        this.clock = clock;
-    }
 }
