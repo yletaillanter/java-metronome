@@ -40,27 +40,6 @@
          </children>
       </HBox>
    </bottom>
-   <top>
-      <MenuBar onMouseDragged="#updateSliderLabel" BorderPane.alignment="CENTER">
-        <menus>
-          <Menu mnemonicParsing="false" text="File">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <items>
-              <MenuItem mnemonicParsing="false" text="About" />
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
-   </top>
    <center>
       <Group>
          <children>
@@ -77,7 +56,4 @@
          </children>
       </Group>
    </center>
-   <right>
-      <ChoiceBox prefWidth="150.0" BorderPane.alignment="TOP_CENTER" />
-   </right>
 </BorderPane>

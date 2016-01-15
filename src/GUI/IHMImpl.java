@@ -49,7 +49,7 @@ public class IHMImpl implements IHM{
                     }
                 },
                 0,      // run first occurrence immediately
-                100); // run every two seconds
+                50); // run every two seconds
     }
 
     @Override
@@ -64,30 +64,29 @@ public class IHMImpl implements IHM{
 
     @Override
     public void markTimeIHM() {
-        Platform.runLater(() -> timeLed.setFill(Color.YELLOW));
+        timeLed.setFill(Color.YELLOW);
+        play("src/res/low.wav");
         try {
             Thread.sleep(100);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        Platform.runLater(() -> timeLed.setFill(Color.DARKGREY));
-        play("src/res/low.wav");
+        timeLed.setFill(Color.DARKGREY);
         controllerAdapter.setTimeToMarkAdapter();
     }
 
     @Override
     public void markMeasureIHM() {
-        System.out.println("Marking measure");
-        Platform.runLater(() -> measureLed.setFill(Color.YELLOW));
-        Platform.runLater(() -> timeLed.setFill(Color.YELLOW));
+        measureLed.setFill(Color.YELLOW);
+        timeLed.setFill(Color.YELLOW);
+        play("src/res/high.wav");
         try {
             Thread.sleep(100);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        Platform.runLater(() -> measureLed.setFill(Color.DARKGREY));
-        Platform.runLater(() -> timeLed.setFill(Color.DARKGREY));
-        play("src/res/high.wav");
+        measureLed.setFill(Color.DARKGREY);
+        timeLed.setFill(Color.DARKGREY);
         controllerAdapter.setMeasureToMarkAdapter();
         controllerAdapter.setTimeToMarkAdapter();
     }

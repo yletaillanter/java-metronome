@@ -83,7 +83,6 @@ public class EngineImpl implements Engine{
 
     public void startClock() {
         long markPerMinute = Math.round((60 / (float) tempo) * 1000);
-        System.out.println(markPerMinute);
         CommandTask com = new CommandTask(controller, beatPerMeasure);
         clock = new Clock(com, markPerMinute);
     }
