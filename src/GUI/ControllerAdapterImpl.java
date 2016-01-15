@@ -5,10 +5,14 @@ package GUI;
  */
 public class ControllerAdapterImpl implements ControllerAdapter{
 
-    private ControllerImpl controller;
+    private Controller controller;
 
     public ControllerAdapterImpl() {
         controller = new ControllerImpl();
+    }
+
+    public ControllerAdapterImpl(Controller controller) {
+        this.controller = controller;
     }
 
     @Override

@@ -1,6 +1,8 @@
-package GUI;
+package test;
 
 import Engine.EngineImpl;
+import GUI.Controller;
+import GUI.ControllerImpl;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
