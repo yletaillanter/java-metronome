@@ -52,6 +52,27 @@ public class IHMImpl implements IHM{
                 50); // run every two seconds
     }
 
+    // For test purpose
+    public IHMImpl(ControllerAdapter controllerAdapter) {
+        this.controllerAdapter = controllerAdapter;
+        Timer t = new Timer();
+        t.scheduleAtFixedRate(
+                new TimerTask()
+                {
+                    public void run()
+                    {
+                        if(controllerAdapter.getMeasureToMarkAdapter()) {
+                            markMeasureIHM();
+                        }
+                        else if(controllerAdapter.getTimeToMarkAdapter()) {
+                            markTimeIHM();
+                        }
+                    }
+                },
+                0,      // run first occurrence immediately
+                50); // run every two seconds
+    }
+
     @Override
     public void startIHM() {
         controllerAdapter.startAdapter();
