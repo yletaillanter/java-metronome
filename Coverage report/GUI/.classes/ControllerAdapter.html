@@ -1,0 +1,114 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: ControllerAdapter</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">GUI</a> ]
+</div>
+
+<h1>Coverage Summary for Class: ControllerAdapter (GUI)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+</tr>
+<tr>
+  <td class="name">ControllerAdapter</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package GUI;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;/**
+<i>4</i>&nbsp; * Interface adapter pour faire la jointure entre le controlleur et l&#39;IHM
+<i>5</i>&nbsp; * @author hvallee
+<i>6</i>&nbsp; *
+<i>7</i>&nbsp; */
+<i>8</i>&nbsp;public interface ControllerAdapter {
+<i>9</i>&nbsp;
+<i>10</i>&nbsp;    /**
+<i>11</i>&nbsp;     * Adapter for start button
+<i>12</i>&nbsp;     */
+<i>13</i>&nbsp;    public void startAdapter();
+<i>14</i>&nbsp;
+<i>15</i>&nbsp;    /**
+<i>16</i>&nbsp;     * Adapter for stop button
+<i>17</i>&nbsp;     */
+<i>18</i>&nbsp;    public void stopAdapter();
+<i>19</i>&nbsp;
+<i>20</i>&nbsp;    /**
+<i>21</i>&nbsp;     * Adapter for marking time
+<i>22</i>&nbsp;     */
+<i>23</i>&nbsp;    public void markTimeAdapter();
+<i>24</i>&nbsp;
+<i>25</i>&nbsp;    /**
+<i>26</i>&nbsp;     * Adapter for marking measure
+<i>27</i>&nbsp;     */
+<i>28</i>&nbsp;    public void markMeasureAdapter();
+<i>29</i>&nbsp;
+<i>30</i>&nbsp;    /**
+<i>31</i>&nbsp;     * Adapter for inc button
+<i>32</i>&nbsp;     */
+<i>33</i>&nbsp;    public void incAdapter();
+<i>34</i>&nbsp;
+<i>35</i>&nbsp;    /**
+<i>36</i>&nbsp;     * Adapter for dec button
+<i>37</i>&nbsp;     */
+<i>38</i>&nbsp;    public void decAdapter();
+<i>39</i>&nbsp;
+<i>40</i>&nbsp;    /**
+<i>41</i>&nbsp;     * Adapter for tempo slider
+<i>42</i>&nbsp;     * @param value
+<i>43</i>&nbsp;     */
+<i>44</i>&nbsp;    public void userSliderAdapter(int value);
+<i>45</i>&nbsp;
+<i>46</i>&nbsp;    /**
+<i>47</i>&nbsp;     *
+<i>48</i>&nbsp;     * @return timeToMark boolean
+<i>49</i>&nbsp;     */
+<i>50</i>&nbsp;    public boolean getTimeToMarkAdapter();
+<i>51</i>&nbsp;
+<i>52</i>&nbsp;    /**
+<i>53</i>&nbsp;     *
+<i>54</i>&nbsp;     * @return measureToMark boolean
+<i>55</i>&nbsp;     */
+<i>56</i>&nbsp;    public boolean getMeasureToMarkAdapter();
+<i>57</i>&nbsp;
+<i>58</i>&nbsp;    /**
+<i>59</i>&nbsp;     * Set timeToMark
+<i>60</i>&nbsp;     */
+<i>61</i>&nbsp;    public void setTimeToMarkAdapter();
+<i>62</i>&nbsp;
+<i>63</i>&nbsp;    /**
+<i>64</i>&nbsp;     * Set measureToMark
+<i>65</i>&nbsp;     */
+<i>66</i>&nbsp;    public void setMeasureToMarkAdapter();
+<i>67</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2016-01-16 15:15</div>
+</div>
+</body>
+</html>
